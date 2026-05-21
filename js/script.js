@@ -1,11 +1,148 @@
 
-//Objeto INTERNO
-const usuarioDb = {
-    email:"email@email.com",
-    senha:"12345",
-    nome: "José Antonio",
+//Pra casa
+//Reutilzar o MODAL para as mensagens de erro!!!
+
+
+//Função anônima ou tradicional
+
+// function (){
+    
+// }
+
+// //Declaração da função
+// function soma(){
+//     console.log(2+2);
+// }
+
+// //Executando a função
+// soma();
+
+//Declaração da função
+// function soma(a=0,b=0){
+//     let resultado = a+b;
+//     console.log(resultado);
+//     return resultado;
+// }
+//Executando a função
+// const resultado = soma();
+// console.log(resultado);
+// console.log(soma());
+
+// const botaoTeste = document.querySelector("#teste");
+
+// botaoTeste.addEventListener("click", function(){
+//     soma("2",2);
+//     console.log( typeof soma("2",2));
+// });
+
+//Arrow Function
+// const soma = (a=0,b=0)=>a+b;
+
+// const botaoTeste = document.querySelector("#teste");
+
+// botaoTeste.addEventListener("click", function(){
+
+//     console.log("SEM THIS: ",botaoTeste.textContent);
+//     console.log("COM THIS: ",this.textContent);
+
+//     soma("2",2);
+//     console.log( typeof soma("2",2));
+// });
+
+// botaoTeste.addEventListener("click", ()=>{
+
+//     console.log("SEM THIS: ",botaoTeste.textContent);
+//     console.log("COM THIS: ",this.textContent);
+
+//     soma("2",2);
+//     console.log( typeof soma("2",2));
+// });
+
+
+
+
+// //Objeto INTERNO
+// const usuarioDb = {
+//     email:"email@email.com",
+//     senha:"12345",
+//     nome: "José Antonio",
+//     avatar: "https://placehold.co/100x100/e6e6e6/444444.png?text=usu%C3%A1rio&font=roboto"
+// }
+
+
+//Lista de usuários
+const usuarios = [
+  {
+    email: "zarak.vultos@exemplo.com",
+    senha: "12345",
+    nome: "Zarak dos Vultos",
+    idade: 42,
     avatar: "https://placehold.co/100x100/e6e6e6/444444.png?text=usu%C3%A1rio&font=roboto"
-}
+  },
+  {
+    email: "elara.astral@exemplo.com",
+    senha: "12345",
+    nome: "Elara Galáxia Astral",
+    idade: 27,
+    avatar: "https://placehold.co/100x100/e6e6e6/444444.png?text=usu%C3%A1rio&font=roboto"
+  },
+  {
+    email: "mordecai.bruma@exemplo.com",
+    senha: "12345",
+    nome: "Mordecai da Bruma",
+    idade: 51,
+    avatar: "https://placehold.co/100x100/e6e6e6/444444.png?text=usu%C3%A1rio&font=roboto"
+  },
+  {
+    email: "thallos.ferro@exemplo.com",
+    senha: "12345",
+    nome: "Thallos de Ferro",
+    idade: 35,
+    avatar: "https://placehold.co/100x100/e6e6e6/444444.png?text=usu%C3%A1rio&font=roboto"
+  },
+  {
+    email: "lyra.eco@exemplo.com",
+    senha: "12345",
+    nome: "Lyra Silvestre Eco",
+    idade: 22,
+    avatar: "https://placehold.co/100x100/e6e6e6/444444.png?text=usu%C3%A1rio&font=roboto"
+  },
+  {
+    email: "boros.fenda@exemplo.com",
+    senha: "12345",
+    nome: "Boros da Fenda Profunda",
+    idade: 64,
+    avatar: "https://placehold.co/100x100/e6e6e6/444444.png?text=usu%C3%A1rio&font=roboto"
+  },
+  {
+    email: "vaelin.nimbus@exemplo.com",
+    senha: "12345",
+    nome: "Vaelin Nimbus",
+    idade: 30,
+    avatar: "https://placehold.co/100x100/e6e6e6/444444.png?text=usu%C3%A1rio&font=roboto"
+  },
+  {
+    email: "selene.quartzo@exemplo.com",
+    senha: "12345",
+    nome: "Selene de Quartzo",
+    idade: 29,
+    avatar: "https://placehold.co/100x100/e6e6e6/444444.png?text=usu%C3%A1rio&font=roboto"
+  },
+  {
+    email: "kaelthas.sol@exemplo.com",
+    senha: "12345",
+    nome: "Kaelthas Brilho do Sol",
+    idade: 47,
+    avatar: "https://placehold.co/100x100/e6e6e6/444444.png?text=usu%C3%A1rio&font=roboto"
+  },
+  {
+    email: "joric.martelo@exemplo.com",
+    senha: "12345",
+    nome: "Joric Martelo de Pedra",
+    idade: 38,
+    avatar: "https://placehold.co/100x100/e6e6e6/444444.png?text=usu%C3%A1rio&font=roboto"
+  }
+];
 
 
 //Capturando o botão de entrar
@@ -49,39 +186,41 @@ botaoEntrar.addEventListener("click", function(e){
     //Validação
     try {
 
-        if (usuarioDb) {
+        if (usuarios) {
 
-            if( (usuarioDb.email === userForm.email) && (usuarioDb.senha === userForm.senha)){
-
-                //Abrindo o dialog e deixando o fundo livre.
-                // modalDialog.show();
-
-                //Abrindo o dialog e travando o fundo.
-                modalDialog.showModal();
+            for(let x = 0; x < usuarios.length; x++){
                 
-                let contador = 5;
-
-                //Injetando os 2 <p> com a mensagem de sucesso.
-                divMsg.innerHTML = `<p>Login realizado com Sucesso!</p><p>Você será redirecionado em ${contador} segundos...</p>`;
-
-                //Temporizador de redirecionamento com setInterval.
-                const intervalo = setInterval( function(){
+                if( (usuarios[x].email === userForm.email) && (usuarios[x].senha === userForm.senha)){
+    
+                    //Abrindo o dialog e deixando o fundo livre.
+                    // modalDialog.show();
+    
+                    //Abrindo o dialog e travando o fundo.
+                    modalDialog.showModal();
                     
-                    contador--;
+                    let contador = 5;
+    
+                    //Injetando os 2 <p> com a mensagem de sucesso.
                     divMsg.innerHTML = `<p>Login realizado com Sucesso!</p><p>Você será redirecionado em ${contador} segundos...</p>`;
-                    
-                    if(contador === 0){
-                        clearInterval(intervalo);
-                        //Redirecionamento do usuário para uma nova página!!
-                        window.location.href = "../index.html";
-                    }
-
-                }, 1000 );
-
-            }else{
-                throw Error("Email ou Senha incorretos.");
+    
+                    //Temporizador de redirecionamento com setInterval.
+                    const intervalo = setInterval( function(){
+                        
+                        contador--;
+                        divMsg.innerHTML = `<p>Login realizado com Sucesso!</p><p>Você será redirecionado em ${contador} segundos...</p>`;
+                        
+                        if(contador === 0){
+                            clearInterval(intervalo);
+                            //Redirecionamento do usuário para uma nova página!!
+                            window.location.href = "../index.html";
+                        }
+    
+                    }, 1000 );
+                    return usuarios[x];
+                }
             }
-            
+                throw Error("Email ou Senha incorretos.");
+                            
         }else{
             throw Error("Ocorreu um erro no acesso as informações do usuário.");
         }
@@ -101,6 +240,3 @@ botaoEntrar.addEventListener("click", function(e){
     }
 });
 
-
-//Pra casa
-//Reutilzar o MODAL para as mensagens de erro!!!
