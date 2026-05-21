@@ -104,3 +104,59 @@ botaoEntrar.addEventListener("click", function(e){
 
 //Pra casa
 //Reutilzar o MODAL para as mensagens de erro!!!
+
+
+//Função anônima ou tradicional
+
+// function (){
+    
+// }
+
+// //Declaração da função
+// function soma(){
+//     console.log(2+2);
+// }
+
+// //Executando a função
+// soma();
+
+//Declaração da função
+// function soma(a=0,b=0){
+//     let resultado = a+b;
+//     console.log(resultado);
+//     return resultado;
+// }
+//Executando a função
+// const resultado = soma();
+// console.log(resultado);
+// console.log(soma());
+
+// const botaoTeste = document.querySelector("#teste");
+
+// botaoTeste.addEventListener("click", function(){
+//     soma("2",2);
+//     console.log( typeof soma("2",2));
+// });
+
+//Arrow Function
+// const soma = (a=0,b=0)=>a+b;
+
+// const botaoTeste = document.querySelector("#teste");
+
+// botaoTeste.addEventListener("click", function(){
+
+//     console.log("SEM THIS: ",botaoTeste.textContent);
+//     console.log("COM THIS: ",this.textContent);
+
+//     soma("2",2);
+//     console.log( typeof soma("2",2));
+// });
+
+// botaoTeste.addEventListener("click", ()=>{
+
+//     console.log("SEM THIS: ",botaoTeste.textContent);
+//     console.log("COM THIS: ",this.textContent);
+
+//     soma("2",2);
+//     console.log( typeof soma("2",2));
+// });
